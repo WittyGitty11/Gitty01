@@ -1,0 +1,22 @@
+package com.encryption.encryptdecrypt;
+
+import com.encryption.encryptdecrypt.service.TrialService;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+@SpringBootApplication
+public class EncryptdecryptApplication {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context = SpringApplication.run(EncryptdecryptApplication.class, args);
+
+		 Object obj = context.getBean("trialService");
+		 if(obj instanceof TrialService){
+			 TrialService service = (TrialService)obj;
+			 service.run();
+ 		}
+
+	}
+
+}
